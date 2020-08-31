@@ -168,9 +168,9 @@ namespace MyCustomProject.Common
             return adp.Changer<TT>();
         }
 
-        public Result<List<TT>> SelectForeignById(int id)
+        public Result<List<TT>> SelectForeignById(int? id)
         {
-            string querry = $"select * from {tableofTT.TableName} where {tableofTT.ForeignColumn} = {id} and {tableofTT.IsActiveColumn} = true";
+            string querry = $"select * from {tableofTT.TableName} where {tableofTT.ForeignColumn} = {id} and {tableofTT.IsActiveColumn} = 1";
 
             SqlDataAdapter adp = new SqlDataAdapter(querry, Tools.Connection);
             return adp.Changer<TT>();
@@ -201,7 +201,7 @@ namespace MyCustomProject.Common
 
         public Result<List<TT>> SelectActive()
         {
-            string querry = $"select * from {tableofTT.TableName} where {tableofTT.IsActiveColumn} = true";
+            string querry = $"select * from {tableofTT.TableName} where {tableofTT.IsActiveColumn} = 1";
 
             SqlDataAdapter adp = new SqlDataAdapter(querry, Tools.Connection);
             return adp.Changer<TT>();

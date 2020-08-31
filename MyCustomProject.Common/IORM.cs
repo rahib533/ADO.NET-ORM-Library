@@ -14,7 +14,7 @@ namespace MyCustomProject.Common
         Result<bool> Delete(T entity);
         Result<List<T>> SelectActive();
         Result<List<T>> SelectById(int id);
-        Result<List<T>> SelectForeignById(int id);
+        Result<List<T>> SelectForeignById(int? id);
         Result<List<T>> OrderByDesc(int count);
         Result<List<T>> OrderByAsc(int count);
         Result<List<T>> Contain(string columnName, string word);
