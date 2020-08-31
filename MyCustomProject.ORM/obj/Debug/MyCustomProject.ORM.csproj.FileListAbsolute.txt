@@ -1,0 +1,11 @@
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.ORM.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.ORM.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.Common.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.Entity.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.Common.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\bin\Debug\MyCustomProject.Entity.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\obj\Debug\MyCustomProject.ORM.csprojAssemblyReference.cache
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\obj\Debug\MyCustomProject.ORM.csproj.CoreCompileInputs.cache
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\obj\Debug\MyCustomProject.ORM.csproj.CopyComplete
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\obj\Debug\MyCustomProject.ORM.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.ORM\obj\Debug\MyCustomProject.ORM.pdb

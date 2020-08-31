@@ -1,0 +1,9 @@
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\bin\Debug\MyCustomProject.Entity.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\bin\Debug\MyCustomProject.Entity.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\bin\Debug\MyCustomProject.Common.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\bin\Debug\MyCustomProject.Common.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\obj\Debug\MyCustomProject.Entity.csprojAssemblyReference.cache
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\obj\Debug\MyCustomProject.Entity.csproj.CoreCompileInputs.cache
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\obj\Debug\MyCustomProject.Entity.csproj.CopyComplete
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\obj\Debug\MyCustomProject.Entity.dll
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Entity\obj\Debug\MyCustomProject.Entity.pdb
