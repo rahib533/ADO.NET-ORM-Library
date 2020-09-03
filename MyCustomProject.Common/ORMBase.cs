@@ -141,6 +141,10 @@ namespace MyCustomProject.Common
                     continue;
                 }
                 object data = item.GetValue(entity);
+                if (data == null || data == DBNull.Value)
+                {
+                    data = DBNull.Value;
+                }
                 querry += $" {item.Name} = @{item.Name},";
                 cmd.Parameters.AddWithValue($"@{item.Name}", data);
                 
