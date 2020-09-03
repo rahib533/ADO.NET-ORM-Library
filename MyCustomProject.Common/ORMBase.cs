@@ -52,9 +52,8 @@ namespace MyCustomProject.Common
         {
             string querry = $"Delete {tableofTT.TableName} where {tableofTT.IdentityColumn} = ";
             PropertyInfo[] props = typeofTT.GetProperties();
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = Tools.Connection;
-            Tools.CMD.Connection = Tools.Connection;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Tools.Connection;
             string data = "";
 
             foreach (PropertyInfo item in props)
@@ -65,16 +64,14 @@ namespace MyCustomProject.Common
 
                     querry += "@" + item.Name;
 
-                    Tools.CMD.Parameters.AddWithValue($"@{item.Name}", data);
+                    cmd.Parameters.AddWithValue($"@{item.Name}", data);
                     break;
                 }
             }
 
-            //cmd.CommandText = querry;
-            Tools.CMD.CommandText = querry;
-
-            //return cmd.Exec();
-            return Tools.CMD.Exec();
+            cmd.CommandText = querry;
+            
+            return cmd.Exec();
         }
 
         public Result<bool> Insert(TT entity)
@@ -82,9 +79,9 @@ namespace MyCustomProject.Common
             string querry = "insert into ";
             querry += string.Format("{0}(", tableofTT.TableName);
             string values = " values(";
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = Tools.Connection;
-            Tools.CMD.Connection = Tools.Connection;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Tools.Connection;
+            
             // --------------------------------------------------
 
             PropertyInfo[] props = typeofTT.GetProperties();
@@ -102,20 +99,18 @@ namespace MyCustomProject.Common
                 }
                 querry += string.Format("{0},", item.Name);
                 values += string.Format("@{0},", item.Name);
-                //cmd.Parameters.AddWithValue(string.Format("@{0}", item.Name), Value);
-                Tools.CMD.Parameters.AddWithValue(string.Format("@{0}", item.Name), Value);
+                cmd.Parameters.AddWithValue(string.Format("@{0}", item.Name), Value);
+               
             }
 
             querry = querry.Remove(querry.Length - 1, 1);
             values = values.Remove(values.Length - 1, 1);
             querry += string.Format(") {0})", values);
 
-            //cmd.CommandText = querry;
-            Tools.CMD.CommandText = querry;
+            cmd.CommandText = querry;
 
-
-            //eturn cmd.Exec();
-            return Tools.CMD.Exec();
+            return cmd.Exec();
+            
         }
 
         public Result<List<TT>> Select()
@@ -131,9 +126,9 @@ namespace MyCustomProject.Common
         {
             string querry = $"Update {tableofTT.TableName} set";
             PropertyInfo[] props = typeofTT.GetProperties();
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = Tools.Connection;
-            Tools.CMD.Connection = Tools.Connection;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Tools.Connection;
+            
             string idColumnName = "";
             string idValue = "";
 
@@ -147,18 +142,15 @@ namespace MyCustomProject.Common
                 }
                 object data = item.GetValue(entity);
                 querry += $" {item.Name} = @{item.Name},";
-                //cmd.Parameters.AddWithValue($"@{item.Name}", data);
-                Tools.CMD.Parameters.AddWithValue($"@{item.Name}", data);
+                cmd.Parameters.AddWithValue($"@{item.Name}", data);
+                
             }
             querry = querry.Remove(querry.Length - 1, 1) + $" WHERE {idColumnName} = @{idColumnName}";
-            //cmd.Parameters.AddWithValue($"@{idColumnName}", idValue);
-            Tools.CMD.Parameters.AddWithValue($"@{idColumnName}", idValue);
-
-            //cmd.CommandText = querry;
-            Tools.CMD.CommandText = querry;
-
-            //return cmd.Exec();
-            return Tools.CMD.Exec();
+            cmd.Parameters.AddWithValue($"@{idColumnName}", idValue);
+            
+            cmd.CommandText = querry;
+            
+            return cmd.Exec();
         }
 
         public Result<List<TT>> SelectById(int id)
@@ -171,6 +163,14 @@ namespace MyCustomProject.Common
         public Result<List<TT>> SelectForeignById(int? id)
         {
             string querry = $"select * from {tableofTT.TableName} where {tableofTT.ForeignColumn} = {id} and {tableofTT.IsActiveColumn} = 1";
+
+            SqlDataAdapter adp = new SqlDataAdapter(querry, Tools.Connection);
+            return adp.Changer<TT>();
+        }
+
+        public Result<List<TT>> SelectForeignByIdCom(int? id)
+        {
+            string querry = $"select * from {tableofTT.TableName} where {tableofTT.ForeignColumn} = {id} ";
 
             SqlDataAdapter adp = new SqlDataAdapter(querry, Tools.Connection);
             return adp.Changer<TT>();

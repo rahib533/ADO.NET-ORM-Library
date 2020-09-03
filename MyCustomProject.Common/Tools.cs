@@ -111,21 +111,5 @@ namespace MyCustomProject.Common
 
 		}
 
-
-
-		private static SqlCommand cmd;
-
-		public static SqlCommand CMD
-		{
-			get
-			{
-				if (cmd == null)
-				{
-					cmd = new SqlCommand();
-				}
-				return cmd;
-			}
-		}
-
 	}
 }
