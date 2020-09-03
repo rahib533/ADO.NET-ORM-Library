@@ -3,3 +3,4 @@ C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Common\bin\Debug\My
 C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Common\obj\Debug\MyCustomProject.Common.csproj.CoreCompileInputs.cache
 C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Common\obj\Debug\MyCustomProject.Common.dll
 C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Common\obj\Debug\MyCustomProject.Common.pdb
+C:\Users\hp2015\source\repos\MyCustomProject\MyCustomProject.Common\obj\Debug\MyCustomProject.Common.csprojAssemblyReference.cache

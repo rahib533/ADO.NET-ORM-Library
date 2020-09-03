@@ -50,7 +50,6 @@ namespace MyCustomProject.Common
 		}
 
 
-
 		private static SqlConnection connection;
 
 		public static SqlConnection Connection
@@ -95,7 +94,7 @@ namespace MyCustomProject.Common
 				return new Result<List<T>>
 				{
 					IsSucced = true,
-					Message = "it is okay",
+					Message = "success",
 					Data = lisd
 				};
 			}

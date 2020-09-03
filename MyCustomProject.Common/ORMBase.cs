@@ -170,7 +170,7 @@ namespace MyCustomProject.Common
 
         public Result<List<TT>> SelectForeignByIdCom(int? id)
         {
-            string querry = $"select * from {tableofTT.TableName} where {tableofTT.ForeignColumn} = {id} ";
+            string querry = $"SELECT * FROM {tableofTT.TableName} WHERE {tableofTT.ForeignColumn} = {id} ";
 
             SqlDataAdapter adp = new SqlDataAdapter(querry, Tools.Connection);
             return adp.Changer<TT>();
